@@ -1,0 +1,146 @@
+:root {
+  --bg-odd: #eec1ea;
+  --bg-even: #a374d5;
+  --bg-background: #fffbbe;
+  --bg-hover: #c1eaee;
+  --bg-title: #ffc15e;
+  --bg-titlebar: #fff672;
+  --main-margins: 10vw;
+  --top-bar-height: 100px;
+  --content-height: calc(100vh - var(--top-bar-height));
+}
+
+body {
+  background-color: var(--bg-background);
+}
+
+.MainContainer {
+  box-sizing: border-box;
+  font-size: 1.8rem;
+  color: var(--text);
+  yggpadding-left: var(--main-margins);
+  padding-right: var(--main-margins);
+  box-shadow: inset 0px 20px 50px rgba(0, 0, 0, 0.1);
+  min-height: var(--content-height);
+  position: relative;
+}
+
+.TitleBar {
+  background: var(--bg-title);
+  font-family: "Ubuntu";
+  font-size: 1.5rem;
+  box-sizing: border-box;
+  padding-top: 5px;
+  margin-top: 0px;
+  padding-bottom: 5px;
+}
+
+.TitleBar>h1 {
+  color: var(--bg-titlebar);
+  font-family: "Montserrat";
+  font-size: 1.5em;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.TitleBar>h2 {
+  color: var(--bg-titlebar);
+  font-family: "Montserrat";
+  font-size: 1.2em;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: -20px;
+}
+
+.BarChart {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 500px;
+  grid-gap: 20px;
+  align-items: end;
+  margin-left: 200px;
+}
+
+.BarChart-bar {
+  font-size: 3vw;
+  transition: transform 0.5s, filter 0.5s;
+  transform: perspective(1000px) translate3d(0px, 1px, 0px);
+  text-align: center;
+}
+
+.BarChart-bar:hover {
+  background-color: var(--bg-hover);
+  transition: 1s;
+  filter: brightness(1);
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  cursor: pointer;
+  transform: perspective(1000px) translate3d(0px, 0px, 100px);
+}
+
+.BarChart-bar:nth-child(even) {
+  background-color: var(--bg-even);
+  font-family: "Ubuntu";
+}
+
+.BarChart-bar:nth-child(odd) {
+  background-color: var(--bg-odd);
+  font-family: "Ubuntu";
+}
+
+.Button {
+  display: flex;
+  justify-content: center;
+}
+
+/* Button Styling */
+
+.MyButton {
+  margin-top: 80px;
+  -moz-box-shadow: inset 0px 1px 0px 0px #efdcfb;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #efdcfb;
+  box-shadow: inset 0px 1px 0px 0px #efdcfb;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dfbdfa), color-stop(1, #bc80ea));
+  background: -moz-linear-gradient(top, #dfbdfa 5%, #bc80ea 100%);
+  background: -webkit-linear-gradient(top, #dfbdfa 5%, #bc80ea 100%);
+  background: -o-linear-gradient(top, #dfbdfa 5%, #bc80ea 100%);
+  background: -ms-linear-gradient(top, #dfbdfa 5%, #bc80ea 100%);
+  background: linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfbdfa', endColorstr='#bc80ea', GradientType=0);
+  background-color: #dfbdfa;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border: 1px solid #c584f3;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #9752cc;
+}
+
+.MyButton:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bc80ea), color-stop(1, #dfbdfa));
+  background: -moz-linear-gradient(top, #bc80ea 5%, #dfbdfa 100%);
+  background: -webkit-linear-gradient(top, #bc80ea 5%, #dfbdfa 100%);
+  background: -o-linear-gradient(top, #bc80ea 5%, #dfbdfa 100%);
+  background: -ms-linear-gradient(top, #bc80ea 5%, #dfbdfa 100%);
+  background: linear-gradient(to bottom, #bc80ea 5%, #dfbdfa 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bc80ea', endColorstr='#dfbdfa', GradientType=0);
+  background-color: #bc80ea;
+}
+
+.MyButton:active {
+  position: relative;
+  top: 1px;
+}
